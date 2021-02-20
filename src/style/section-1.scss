@@ -1,0 +1,181 @@
+@use 'vars';
+@use 'animations';
+
+.first-section{
+    height: 100vh;
+    max-width: 1700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logo-banner{
+        width: 100%;
+        height: 90px;
+        background: vars.$primary-dark;
+        transition: background .2s;
+
+        &.dark{
+            background: vars.$secondary-dark;
+        }
+        .rectangles{
+            display: none;
+        }
+
+        .logo{
+            margin: auto;
+            width: 85px;
+            height: 100%;
+            background-image: url('../img/logo.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .logo-description{
+            display: none;
+        }
+    }
+
+    .description{
+        margin-top: 30px;
+        width: 100%;
+        height: 70%;
+        text-align: center;
+        background-image: url('../img/circle.svg');
+        background-repeat: no-repeat;
+        background-size: 10%;
+        background-position: top;
+
+        &.dark{
+            background-image: url('../img/circle-light.svg');
+            background-repeat: no-repeat;
+            background-size: 10%;
+            background-position: top;
+        }
+
+        .text-area{
+            margin: auto;
+            width: 60%;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .man-img{
+            margin-top: 40px;
+            width: 80%;
+            max-width: 400px;
+        }
+    }
+
+    .scroll-btn{
+        border: none;
+        outline: none;
+        background-color: vars.$primary-green;
+        color: white;
+        width: 100px;
+        height: 40px;
+        border-radius: 40px;
+        font-size: 1.7rem;
+        text-align: center;
+        cursor: pointer;
+        overflow: hidden;
+        
+        .scroll-icon{
+            animation: animate-scroll-btn 1.5s infinite ease-out alternate;
+        }
+    }
+}
+
+@media (min-width: 850px){
+    .first-section{
+        background-image: url('../img/circle.svg');
+        background-repeat: no-repeat;
+        background-position: right;
+        position: relative;
+        flex-direction: row-reverse;
+        align-items: unset;
+
+        .logo-banner{
+            position: relative;
+            height: 100%;
+            width: 39%;
+            max-width: 300px;
+            margin-right: 70px;
+
+            .rectangles{
+                position: absolute;
+                width: 90%;
+                height: 120px;
+                display: initial;
+                bottom: 20px;
+
+                .rect1{
+                    position: absolute;
+                    right: -5px;
+                    top: -40px;
+                }
+                .rect2{
+                    position: absolute;
+                    left: 15px;
+                    top: 0;
+                }
+            }
+
+            .logo{
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 130px;
+                height: 130px;
+            }
+
+            .logo-description{
+                display: block;
+                position: absolute;
+                padding: 10px;
+                top: 180px;
+                left: 15px;
+                max-width: 250px;
+
+                h5{
+                    color: rgb(230, 230, 230);
+                    letter-spacing: 1px;
+                }
+            }
+        }
+
+        .description{
+            padding: 35px 50px 30px 75px;
+            text-align: left;
+
+            background-image: url('../img/circle.svg');
+            background-repeat: no-repeat;
+            background-position: top;
+            .text-area{
+                text-align: left;
+                max-width: 500px;
+                margin: 0;
+                background-image: url('../img/circle.svg');
+                background-repeat: no-repeat;
+                background-position: bottom;
+                background-size: 5%;
+            }
+
+            .man-img{
+                max-width: 580px;
+            }
+        }
+
+        .scroll-btn{
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translate(-50%);
+
+            &:hover{
+                animation: shake 1s infinite alternate linear;
+                animation-delay: .02s;
+            }
+        }
+    }
+}
