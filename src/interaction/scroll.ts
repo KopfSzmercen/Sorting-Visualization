@@ -5,7 +5,7 @@ const settingsScreenContainer = document.getElementById('setting-sort-container'
 export const scrollTrigger = () => {
 
     document.addEventListener('scroll', e => {
-        if (window.scrollY === secondSection.offsetTop){
+        if (window.scrollY >= secondSection.offsetTop - 40){
             sortBtnMobile.classList.add('scroll-visible');
             settingsScreenContainer.classList.add('scroll-visible');
         }
