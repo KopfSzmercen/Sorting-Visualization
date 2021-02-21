@@ -7,7 +7,7 @@
     background-size: contain;
     height: 100vh;
     max-width: 1700px;
-    margin-top: 5px;
+    margin: 5px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -86,7 +86,7 @@
     }
     .settings-screen.hidden{
         position: absolute;
-        transform: translateY(900px);
+        transform: translateY(1200px);
     }
     .settings-screen{
         position: absolute;
@@ -96,7 +96,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        transition: .6s ease-out;
+        transition: .5s ease-out;
         z-index: 10;
 
         &.dark{
@@ -226,6 +226,7 @@
             border: none;
             outline: none;
             background: transparent;
+            margin-bottom: 15px;
         }
         .close-icon{
             font-size: 2.5rem;
@@ -257,6 +258,9 @@
                     border: 1px solid vars.$light-background;
                 }
             }
+        }
+        .settings-screen{
+            display: none;
         }
         .settings-sort-container{
             display: flex;
